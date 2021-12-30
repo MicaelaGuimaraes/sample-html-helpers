@@ -129,6 +129,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AlertHelper.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\TagImgHelper.cs" />
     <Compile Include="Models\ModelsViewBeginForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

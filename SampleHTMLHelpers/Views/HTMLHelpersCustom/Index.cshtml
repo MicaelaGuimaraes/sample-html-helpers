@@ -1,5 +1,33 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <!-- For Testing -->
 
-@Html.MessageAlert("Message Test", SampleHTMLHelpers.Enum.MessageTypeEnum.Success, new { id = $"{@Guid.NewGuid()}" })
+            @*@for (int i = 0; i < 3; i++)
+            {
+                @Html.MessageAlert("Message Test", SampleHTMLHelpers.Enum.MessageTypeEnum.Success, new { id = $"{@Guid.NewGuid()}" })
+            }*@
+
+            @Html.MessageAlert("HTML Helper Message", SampleHTMLHelpers.Enum.MessageTypeEnum.Success, new { id = $"{@Guid.NewGuid()}" })
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+            @Html.Label("HTML Helper File:")
+            @Html.File(Guid.NewGuid().ToString())
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+            @Html.Label("HTML Helper Img Tag: ")<br />
+            @Html.TagImg("https://avatars.githubusercontent.com/u/46268819?s=400&u=21192be3786e78b74e9544900def5c5afac59167&v=4", "")
+        </div>
+    </div>
+</div>
