@@ -1,0 +1,179 @@
+﻿@{
+    ViewBag.Title = "HTML Helpers Types";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 mt-3">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                ActionLink
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Used to link in html page</p>
+                                @Html.ActionLink("Application name", "Index", "Home", null, new { hidefocus = "hidefocus", @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                TextBox
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Used to create a text box</p>
+                                @Html.TextBox("Teste", "", new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                CheckBox
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Used to create the selection box</p>
+                                @Html.CheckBox("Test", true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                RadioButton
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Used to create the radio button.</p>
+                                @Html.RadioButton("Test", "")
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                BeginForm
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Used to launch a form.</p>
+
+                                @using (Html.BeginForm("BeginFormResult", "HTMLHelpersTypes", FormMethod.Post))
+                                {
+                                    <div class="form-group">
+                                        @Html.Label("Name: ")
+                                        @Html.TextBox("name", "", new { @class = "form-control", type = "text" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("Email: ")
+                                        @Html.TextBox("email", "", new { @class = "form-control", type = "text" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("Age: ")
+                                        @Html.TextBox("age", "", new { @class = "form-control", type = "number" })
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                DropDownList
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Used to create dropdown list.</p>
+                                @Html.DropDownList("ColorsEnum",
+                                                    new SelectList(Enum.GetValues(typeof(SampleHTMLHelpers.Enum.ColorsEnum))),
+                                                    "Select",
+                                                    new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                Hidden
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Used to create hidden fields.</p>
+                                @Html.Hidden("Test", "1")
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                Label
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">used to create an HTML tag in the browser.</p>
+                                @Html.Label("ColorName", "Name Color", new { @class = "font-weight-bold" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                TextArea
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">The TextArea method renders the textarea element in the browser.</p>
+                                @Html.TextArea("Color Description", "Description Test", new { @class = "form-control", @rows = "4" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                Password
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">This method is responsible for creating the password input field in the browser.</p>
+                                @Html.Password("Password", "Test", new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-header">
+                                ListBox
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">ListBox helper method creates ListBox html with scroll bar in browser.</p>
+                                @Html.ListBox("Teste", new SelectList(Enum.GetValues(typeof(SampleHTMLHelpers.Enum.ColorsEnum))), new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

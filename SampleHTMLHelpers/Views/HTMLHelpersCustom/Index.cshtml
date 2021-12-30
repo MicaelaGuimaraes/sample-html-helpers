@@ -1,0 +1,5 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@Html.MessageAlert("Message Test", SampleHTMLHelpers.Enum.MessageTypeEnum.Success, new { id = $"{@Guid.NewGuid()}" })
